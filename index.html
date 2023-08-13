@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat za izradu kuhinja po meri</title>
+    <link rel="stylesheet" type="text/css" href="stilizacija.css">
+    <link rel="stylesheet" href="korpa.css">
+    <link rel="stylesheet" href="galerija.css">
+    <link rel="stylesheet" href="dezeni.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    
+    <div class="chat-container">
+        <h2 class="header">Kalkulator cene kuhinjskog elementa</h2>
+        <div class="inputBox">
+            <input type="number" id="height" min="90" max="200" required>
+            <span>Visina (cm):</span>
+        </div>
+        <div class="inputBox">
+            <input type="number" id="width" min="100" max="250" required>
+            <span>Širina (cm):</span>
+        </div>
+        <div class="inputBox">
+            <input type="number" id="depth" min="30" max="60" required>
+            <span>Dubina (cm):</span>
+        </div>
+        <!------DEZENIIIIII------->
+<button id="choose-pattern">Izaberi dezen</button>
+<div id="pattern-list" class="hidden">
+    <div class="pattern">
+        <img src="kuhinja6.jpg" alt="Dezen 1">
+        <p>Osnovni dezen</p>
+    </div>
+    <div class="pattern">
+        <img src="kuhinja7.jpg" alt="Dezen 2">
+        <p>Crni kamen</p>
+    </div>
+    <div class="pattern">
+        <img src="kuhinja6.jpg" alt="Dezen 3">
+        <p>Beli mermer</p>
+    </div>
+</div>
+<div id="selected-pattern" class="hidden">
+    <p>Odabrani dezen:</p>
+    <img src="" alt="Odabrani dezen" id="selected-image">
+    <p id="selected-pattern-title"></p>
+</div>
+        <!--KRAJ DEZENIIIIII-->
+        <button id="calculate-btn" class="btn">Izračunaj cenu</button>
+        <p id="price" class="result"></p>
+    </div>
+
+
+    <!--******** Dodati elementi za skladištenje podataka ********-->
+    
+<!-- Ovde ostaje link za "Korpu" -->
+<a href="pregled_kuhinja.html" class="cart-link" id="cart-button" aria-label="Korpa">
+    <i class="fas fa-shopping-cart"></i>
+</a>
+<span id="cart-items">0</span>
+<!-- Dodajte novo dugme "Kupi" sa ID-om "kupi-btn" -->
+<button id="kupi-btn">Kupi</button>
+
+    <!--******** KRAJ Dodati elementi za skladištenje podataka *********-->
+    <script src="trening.js"></script>
+    <script src="dezeni.js"></script>
+
+</body>
+
+</html>

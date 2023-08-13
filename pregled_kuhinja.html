@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Moja korpa</title>
+    <link rel="stylesheet" href="pregled_kuhinja.css">
+    <link rel="stylesheet" href="popup.css">
+    
+</head>
+
+<body>
+    <h2>Moja korpa</h2>
+<div id="kuhinja-details">
+    <!-- Ovde ćemo prikazati detalje o kuhinji koja je dodata u korpu -->
+    <p>Kreirali ste element: 200cm x 150cm x 60cm, cena vašeg elementa je 2500 evra.</p>
+</div>
+
+<!--
+<div class="order1">
+    <button id="order-button">Naruči</button>
+</div>
+
+-->
+
+
+<!--************popuo**************-->
+<!-- HTML kod za popup prozor 
+
+-->
+<div id="popup">
+    <div id="popup-content">
+        <button class="zatvori" id="close-popup">zatvori</button>
+        
+        <p id="order-message" data-height="200cm" data-width="150cm" data-depth="60cm" data-price="2500">Da li ste sigurni da želite da naručite ovaj proizvod?</p>
+        <button id="confirm-order-button">OrDER</button>
+    </div>
+</div>
+
+<!--************KRAJ popuo**************-->
+    <script>
+        
+        // Dodajte ovaj kod za prikaz detalja o kuhinji sačuvane u localStorage na stranici korpa.html
+        const kuhinjaDetailsDiv = document.getElementById('kuhinja-details');
+
+        // Provera da li ima podataka o kuhinji u localStorage
+        const kuhinjaData = JSON.parse(localStorage.getItem('kuhinjaData'));
+
+        if (kuhinjaData && kuhinjaData.price !== 0) {
+            const kuhinjaDetailsHTML = `
+                <p>Kreirali ste element: ${kuhinjaData.height}cm x ${kuhinjaData.width}cm x ${kuhinjaData.depth}cm, cena vaseg elementa je ${kuhinjaData.price} evra.</p>
+            `;
+            kuhinjaDetailsDiv.innerHTML = kuhinjaDetailsHTML;
+        } else {
+            kuhinjaDetailsDiv.innerHTML = "<p>Nemate nijedan element u korpi.</p>";
+        }
+
+        /********************POPUP**************************/
+         
+        /********************KRAJ POPUP**************************/
+    </script>
+    <script src="popup.js"></script>
+    <script src="test.js"></script>
+</body>
+
+</html>
