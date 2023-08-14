@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(233, 234, 190);
+    background: black;
     gap: 30px;
     flex-direction: column;
     margin: 0;
